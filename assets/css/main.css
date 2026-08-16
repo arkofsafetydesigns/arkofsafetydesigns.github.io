@@ -23,18 +23,23 @@ body {
 
 /* --- Navigation --- */
 .navbar {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
+    background-color: #E8505B !important;
     padding: 1rem 0;
     transition: var(--transition);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .nav-link {
     font-weight: 500;
-    color: var(--text-dark) !important;
+    color: #FFFFFF !important;
     margin: 0 15px;
     transition: var(--transition);
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #FFFFFF;
 }
 
 .nav-link:hover {
@@ -73,6 +78,19 @@ body {
 .hero-section h1 {
     color: var(--text-dark);
     line-height: 1.2;
+}
+
+.fw-extra-bold {
+    font-weight: 800 !important;
+}
+
+.section-overline {
+    display: block;
+    color: #E8505B; /* Accent color from image */
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-transform: none;
 }
 
 .text-primary {
@@ -141,19 +159,120 @@ body {
     border-radius: 0;
 }
 
-/* --- Footer --- */
-footer {
-    background-color: var(--bg-light);
-    border-top: 1px solid #E2E8F0;
+/* --- Super Footer --- */
+.super-footer {
+    background-color: #2d3436; /* Dark Slate/Charcoal theme */
+    color: #dfe6e9;
+    border-top: none;
 }
 
-.social-links a {
-    font-size: 1.2rem;
+.footer-brand-area {
+    gap: 30px;
+}
+
+.footer-logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.app-download-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
     transition: var(--transition);
+    width: fit-content;
 }
 
-.social-links a:hover {
-    color: var(--primary-color) !important;
+.app-btn i {
+    font-size: 1.2rem;
+}
+
+.app-btn b {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.app-btn span {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    display: block;
+    text-align: left;
+}
+
+.app-btn:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+}
+
+.footer-heading {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #b2bec3;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.footer-plant {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.8;
+}
+
+.scroll-top-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.scroll-top-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
 }
 
 /* Responsive Adjustments */
