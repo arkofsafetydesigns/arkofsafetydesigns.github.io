@@ -3,8 +3,8 @@
    ========================================================================== */
 
 :root {
-    --primary-color: #6366F1;
-    --primary-hover: #4F46E5;
+    --primary-color: #E8505B;
+    --primary-hover: #D44853;
     --text-dark: #1E1B4B;
     --text-muted: #64748B;
     --bg-light: #F8FAFC;
@@ -43,7 +43,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--primary-color) !important;
+    color: #FFFFFF !important;
 }
 
 /* --- Primary Button --- */
@@ -55,10 +55,23 @@ body {
     transition: var(--transition);
 }
 
+.nav-download-btn {
+    background-color: #FFFFFF !important;
+    color: #E8505B !important;
+    border: 2px solid #E8505B !important;
+    transition: var(--transition);
+}
+
+.nav-download-btn:hover {
+    background-color: #f8f8f8 !important;
+    color: #D44853 !important;
+    border-color: #D44853 !important;
+}
+
 .btn-primary:hover {
     background-color: var(--primary-hover) !important;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 20px rgba(232, 80, 91, 0.3);
 }
 
 .btn-outline-secondary {
@@ -70,9 +83,9 @@ body {
 
 /* --- Hero Section --- */
 .hero-section {
-    padding: 100px 0;
-    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.05), transparent),
-                radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.05), transparent);
+    padding: 0;
+    background: radial-gradient(circle at top right, rgba(232, 80, 91, 0.05), transparent),
+                radial-gradient(circle at bottom left, rgba(232, 80, 91, 0.05), transparent);
 }
 
 .hero-section h1 {
@@ -98,9 +111,11 @@ body {
 }
 
 .hero-mockup img {
-    border: 12px solid #1a1a1a; /* Mockup frame */
-    border-radius: 40px !important;
-    max-width: 320px;
+    border: none;
+    border-radius: 0 !important;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     transition: var(--transition);
 }
 
@@ -110,7 +125,7 @@ body {
 
 /* --- Features Section --- */
 .bg-soft-primary {
-    background-color: rgba(99, 102, 241, 0.1);
+    background-color: rgba(232, 80, 91, 0.1);
 }
 
 .feature-card {
@@ -132,7 +147,7 @@ body {
     width: 80px;
     height: 80px;
     line-height: 80px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(232, 80, 91, 0.1);
     border-radius: 50%;
     margin: 0 auto;
 }
@@ -150,7 +165,7 @@ body {
     margin: 0 auto 20px;
     font-weight: 700;
     font-size: 1.2rem;
-    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 5px 15px rgba(232, 80, 91, 0.4);
 }
 
 /* --- Download Section --- */
@@ -282,3 +297,4 @@ body {
         text-align: center;
     }
 }
+
