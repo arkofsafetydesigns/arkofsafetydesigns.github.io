@@ -174,120 +174,125 @@ body {
     border-radius: 0;
 }
 
-/* --- Super Footer --- */
-.super-footer {
-    background-color: #2d3436; /* Dark Slate/Charcoal theme */
-    color: #dfe6e9;
-    border-top: none;
+/* --- Footer Recreation from Template --- */
+.footer {
+    background: #263238;
+    color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
-.footer-brand-area {
-    gap: 30px;
+.footer-shape {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.footer-logo-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.footer-shape img.shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
-.app-download-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.footer .footer-widget {
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.app-btn {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white !important;
-    padding: 8px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    transition: var(--transition);
-    width: fit-content;
+.footer .footer-widget h3 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 25px;
 }
 
-.app-btn i {
-    font-size: 1.2rem;
-}
-
-.app-btn b {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
-.app-btn span {
-    font-size: 0.7rem;
-    opacity: 0.8;
-    display: block;
-    text-align: left;
-}
-
-.app-btn:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: white;
-}
-
-.footer-heading {
-    color: white;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.footer-links {
+.footer .footer-widget ul.links {
     list-style: none;
     padding: 0;
 }
 
-.footer-links li {
-    margin-bottom: 10px;
+.footer .footer-widget ul.links li {
+    margin-bottom: 12px;
 }
 
-.footer-links a {
-    color: #b2bec3;
+.footer .footer-widget ul.links li a {
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    transition: var(--transition);
-    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-size: 16px;
 }
 
-.footer-links a:hover {
+.footer .footer-widget ul.links li a:hover {
     color: var(--primary-color);
     padding-left: 5px;
 }
 
-.footer-plant {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    opacity: 0.8;
-}
-
-.scroll-top-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: var(--primary-color);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
+.footer .footer-widget .download-btns a {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #fff;
+    color: #fff;
     text-decoration: none;
-    transition: var(--transition);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    transition: all 0.3s ease;
 }
 
-.scroll-top-btn:hover {
+.footer .footer-widget .download-btns a:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.footer .footer-widget .download-btns a .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer .footer-widget .download-btns a .text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer .footer-widget .download-btns a .text b {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* --- Floating Scroll Top Button --- */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: var(--primary-color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    z-index: 99;
+    cursor: pointer;
+    transition: all 0.3s ease-out 0s;
+    text-decoration: none;
+}
+
+.scroll-top:hover {
     background: var(--primary-hover);
-    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(232, 80, 91, 0.4);
+}
+
+.scroll-top i {
+    font-size: 18px;
 }
 
 /* Responsive Adjustments */
@@ -296,5 +301,14 @@ body {
         padding: 60px 0;
         text-align: center;
     }
+}
+
+/* Utility Classes for Footer Padding */
+.pt-100 {
+    padding-top: 100px !important;
+}
+
+.pb-70 {
+    padding-bottom: 70px !important;
 }
 
