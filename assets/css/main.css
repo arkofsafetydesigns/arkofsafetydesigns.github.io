@@ -2,6 +2,11 @@
    SwiftDrop Modern Minimalist Styles
    ========================================================================== */
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
 :root {
     --primary-color: #E8505B;
     --primary-hover: #D44853;
