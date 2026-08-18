@@ -115,17 +115,24 @@ body {
     color: var(--primary-color) !important;
 }
 
-.hero-mockup img {
+.hero-img {
+    position: relative;
+    margin: 0 -20px; /* Negative margin to expand beyond column boundaries */
+}
+
+.hero-img img {
     border: none;
     border-radius: 0 !important;
-    width: 100%;
+    max-width: 110%; /* Slightly larger than the original container */
+    width: 110%;
     height: auto;
     object-fit: contain;
     transition: var(--transition);
+    margin-left: -5%; /* Center the oversized image */
 }
 
-.hero-mockup img:hover {
-    transform: scale(1.02) rotate(1deg);
+.hero-img img:hover {
+    transform: scale(1.05) rotate(1deg);
 }
 
 /* --- Features Section --- */
