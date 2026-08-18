@@ -47,13 +47,15 @@ body {
     outline: none !important;
     box-shadow: none !important;
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 44px;
+    height: 44px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: transparent !important;
+    z-index: 1050;
+    cursor: pointer;
 }
 
 .toggler-icon {

@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Hamburger Menu Logic ---
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('#navbarNav');
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navbarToggler.classList.toggle('active');
+            navbarCollapse.classList.toggle('show');
+        });
+    }
+
     const track = document.querySelector('.screenshot-track');
     const originalWindows = Array.from(document.querySelectorAll('.screenshot-window'));
     const dots = document.querySelectorAll('.pagination-dot');
@@ -91,26 +102,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Improved Seamless Jump using IntersectionObserver or scroll threshold
-    // Since manual scrollLeft changes don't always trigger a clean 'scroll' event in some browsers
-    // We use a MutationObserver or a simple setInterval for the "loop" check
-    setInterval(() => {
+    // Improved Seamless Jump Logic
+    const handleInfiniteLoop = () => {
         const scrollPos = track.scrollLeft;
-        const firstOriginalOffset = allWindows[cloneCount].offsetLeft - (track.offsetWidth / 2) + (allWindows[cloneCount].offsetWidth / 2);
-        const lastOriginalOffset = allWindows[originalCount + cloneCount - 1].offsetLeft - (track.offsetWidth / 2) + (allWindows[originalCount + cloneCount - 1].offsetWidth / 2);
+        const windowWidth = allWindows[0].offsetWidth;
+        const gap = 30; // Matching the gap in CSS
+        const singleItemWidth = windowWidth + gap;
+        const totalOriginalWidth = originalCount * singleItemWidth;
 
-        if (scrollPos < 0) {
+        // If we scroll too far left (into the last clones)
+        if (scrollPos <= 0) {
             track.scrollTo({
-                left: scrollPos + (originalCount * 330), // Approximate jump
+                left: scrollPos + totalOriginalWidth,
                 behavior: 'instant'
             });
-        } else if (scrollPos > (allWindows[originalCount + cloneCount].offsetLeft - (track.offsetWidth / 2))) {
+        } 
+        // If we scroll too far right (into the first clones)
+        else if (scrollPos >= allWindows[originalCount + cloneCount].offsetLeft - (track.offsetWidth / 2) + (allWindows[0].offsetWidth / 2)) {
             track.scrollTo({
-                left: scrollPos - (originalCount * 330),
+                left: scrollPos - totalOriginalWidth,
                 behavior: 'instant'
             });
         }
-    }, 50);
+        updateActiveState();
+    };
+
+    // Use requestAnimationFrame for the smoothest possible loop check
+    const loopCheck = () => {
+        handleInfiniteLoop();
+        requestAnimationFrame(loopCheck);
+    };
+    requestAnimationFrame(loopCheck);
 
     // --- 4. Auto-Center First Original Item on Load ---
     setTimeout(() => {
@@ -138,4 +160,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateActiveState();
+
 });
