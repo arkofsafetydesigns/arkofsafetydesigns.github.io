@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('#navbarNav');
     if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', (e) => {
-            e.stopPropagation();
+        // Manual toggle to bypass Bootstrap alpha JS reliability issues
+        navbarToggler.addEventListener('click', () => {
             navbarToggler.classList.toggle('active');
             navbarCollapse.classList.toggle('show');
         });

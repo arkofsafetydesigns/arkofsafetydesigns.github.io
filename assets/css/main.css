@@ -197,6 +197,26 @@ body {
     transform: scale(1.05) rotate(1deg);
 }
 
+.features-hero-img {
+    position: relative;
+    margin: 0 -20px;
+}
+
+.features-hero-img img {
+    border: none;
+    border-radius: 0 !important;
+    max-width: 110%;
+    width: 110%;
+    height: auto;
+    object-fit: contain;
+    transition: var(--transition);
+    margin-left: -5%;
+}
+
+.features-hero-img img:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
 /* --- Features Section --- */
 .bg-soft-primary {
     background-color: rgba(232, 80, 91, 0.1);
@@ -334,17 +354,39 @@ body {
     padding-left: 5px;
 }
 
-.footer .footer-widget .download-btns a {
+.app-btn {
     display: inline-flex;
     align-items: center;
     padding: 12px 25px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    text-decoration: none !important;
     transition: all 0.3s ease;
+}
+
+.app-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+
+.app-btn .icon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.app-btn .text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.app-btn .text b {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
 }
 
 .footer .footer-widget .download-btns a:hover {
@@ -505,5 +547,70 @@ body {
 
 .pb-70 {
     padding-bottom: 70px !important;
+}
+
+/* --- FAQ Custom Layout --- */
+.faq-card {
+    background: var(--white);
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    padding: 40px;
+    border: none;
+}
+
+.custom-faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item summary {
+    padding: 20px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    transition: var(--transition);
+}
+
+/* Hide default arrow in all browsers */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '\f107'; /* LineIcons arrow down */
+    font-family: 'LineIcons';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: var(--text-muted);
+}
+
+.faq-item[open] summary {
+    color: var(--primary-color);
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 0 25px 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
